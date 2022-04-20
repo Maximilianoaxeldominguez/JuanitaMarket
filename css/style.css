@@ -308,6 +308,12 @@ main {
     .shoppingCartItemTitle{
         font-size: 14px;
     }
+    .tdPrecio{
+        font-size: 14px;
+    }
+    .inputCantidad{
+    margin-left: 25%;
+    }
 }
 
 /************************************************************* NEWSLETTER *******************************************************************/
@@ -527,10 +533,6 @@ footer {
 
 .thCantidad {
     width: 30%;
-}
-
-.tdCantidad {
-    padding-left: 20%;
 }
 
 .thNombre {
