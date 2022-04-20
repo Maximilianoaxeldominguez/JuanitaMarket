@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    margin: 1%;
+}
+
+main {
+    margin-top: -1%;
+    margin: 1%;
+}
+
+/************************************************************* ENCABEZADO *******************************************************************/
+
+.promo {
+    height: 10%;
+    width: 100%;
+    background-color: rgb(194, 194, 194);
+    text-align: center;
+    color: white;
+}
+
+.textoPromo {
+    font-size: 20px;
+}
+
+.headerLogo {
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width: 600px){
+    .textoPromo {
+        font-size: 14px;
+    }
+    .imagenJuanita{
+        width: 200px;
+        height: 200px;
+    }
+    .foto1{
+        height: 15vh;
+    }
+    .carousel{
+        margin-top: 3%;
+    }
+}
+
+
+/************************************************************* BARRA DE NAVEGACION *******************************************************************/
+
+.nav-item {
+    list-style: none;
+}
+
+/************************************************************* CARTELITO ABAJO CARROUSEL *******************************************************************/
+
+.cajaFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(209, 209, 209);
+    margin-top: 2%;
+    height: 15vh;
+}
+
+.col-auto {
+    margin-top: 1.5%;
+    margin-left: 3%;
+}
+
+.CajaDeP {
+    margin-top: 2.1%;
+    padding-left: 2%;
+}
+
+.CajaNegrita {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.alert{
+    z-index: 100;
+  }
+
+  @media (max-width : 1225px){
+
+    .cajaFlex {
+        height: 12vh;
+    }
+    .CajaNegrita {
+        font-size: 18px;
+    }
+
+    .icon-inline{
+        width: 75px;
+        height: 75px;
+    }
+  }
+
+  @media (max-width : 1005px){
+
+    .col-auto {
+        margin-left: 2%;
+    }
+
+    .cajaFlex {
+        height: 12vh;
+    }
+
+    .CajaNegrita {
+        font-size: 15px;
+    }
+
+    .icon-inline{
+        width: 65px;
+        height: 65px;
+    }
+    .XXXitem{
+        font-size: 14px;
+    }
+  }
+  @media (max-width : 630px){
+
+    .cajaFlex {
+        height: 12vh;
+    }
+
+    .CajaNegrita {
+        font-size: 14px;
+    }
+
+    .icon-inline{
+        width: 50px;
+        height: 50px;
+    }
+    .XXXitem{
+        font-size: 12px;
+    }
+  }
+
+  @media(max-width: 600px){
+      .cajaFlex{
+          display: none;
+      }
+  }
+  
+/************************************************************* PRODUCTOS MAS ELEGIDOS *******************************************************************/
+.loMasElegido {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.containerFlex {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.containerProductos {
+    height: 100%;
+    width: 25%;
+}
+
+/* .containerProductos:hover {
+    opacity: 80%;
+    border: 2px solid black;
+    transform: scale(0.9, 0.9);
+    border-radius: 10%;
+} */
+
+
+.containerProductos img {
+    height: 500px;
+    width: 100%;
+    padding: 10% 10% 5% 10%;
+}
+
+.detalleProducto {
+    text-align: center;
+}
+
+
+
+.precioProducto {
+    margin-bottom: 2%;
+}
+
+@media (max-width: 1550px){
+
+    .containerProductos img {
+        height: 425px;
+    }
+    .nombreProducto{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1150px){
+
+    .containerProductos img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 950px){
+
+    .containerProductos {
+        width: 30%;
+    }
+
+    .containerProductos img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 800px){
+
+    .containerProductos img {
+        height: 250px;
+    }
+    .nombreProducto{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px){
+    .containerProductos {
+        width: 45%;
+    }
+}
+
+@media (max-width: 470px){
+    .containerProductos {
+        width: 80%;
+    }
+}
+
+
+/************************************************************* CARRITO DE COMPRAS *******************************************************************/
+
+.tituloCarrito {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 3%;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.menuDeCarrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.productoDelCarrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3%;
+}
+
+
+.inputCantidadCarrito{
+    width: 1.5%;
+    height: 22px;
+}
+
+/************************************************************* NEWSLETTER *******************************************************************/
+
+.newsletter {
+    background-color: rgb(209, 209, 209);
+    margin-top: 5%;
+    height: 32vh;
+    padding: 2.5%;
+}
+
+.newsletter h2 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.newsletterNegrita {
+    text-align: center;
+    font-size: bold;
+    font-size: 55px;
+}
+
+.newsletterP {
+    text-align: center;
+    margin-top: 1%;
+    font-size: 20px;
+}
+
+.inputEmail {
+    width: 50%;
+    height: 3.5vh;
+    margin-top: 1.5%;
+    margin-left: 25%;
+}
+
+@media (max-width: 600px){
+    .newsletterNegrita {
+        font-size: 35px;
+    }
+    .newsletterP {
+        text-align: center;
+        margin-top: 1%;
+        font-size: 17px;
+    }
+    .newsletter {
+        height: 23vh;
+        padding: 2.5%;
+    }
+    .inputEmail {
+        margin-top: 3%;
+    }
+}
+
+/************************************************************* INSTAGRAM *******************************************************************/
+
+.insta {
+    margin-top: 5%;
+    text-align: center;
+    font-family: monospace;
+}
+
+.instaImg {
+    margin-bottom: 1%;
+    margin-right: 1%;
+}
+
+.instaSpan {
+    display: inline-block;
+}
+
+
+.instaLink {
+    font-size: 60px;
+    color: black;
+}
+
+.InstaBtn {
+    height: 50px;
+    width: 130px;
+    margin-left: 48%;
+}
+
+.InstaBtnLink{
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 600px){
+    .instaLink {
+        font-size: 30px;
+        color: black;
+    }
+
+    .InstaBtn {
+        height: 35px;
+        width: 100px;
+        margin-left: 40%;
+    }
+
+    .instaImg {
+        height: 70px;
+        width: 70px;
+    }
+}
+
+/************************************************************* FOOTER *******************************************************************/
+
+footer {
+    background-color: rgb(209, 209, 209);
+    height: 50vh;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.fooFlex{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+    margin-left: 10%;
+    border-bottom: 2px black solid;
+}
+
+.menuFlex{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 10%;
+}
+
+.FooPagos{
+    margin-top: 3%;
+    text-align: center;
+    margin-right: 3%;
+}
+
+.FooPagos h6{
+    font-size: 25px;
+    margin-bottom: 2%;
+}
+
+.fooImg{
+    margin-left: 1%;
+}
+
+.fooXD{
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    margin-top: 2.5%;
+    height: 5vh;
+    text-align: center;
+}
+
+.fooXdP{
+padding-top: 0.5%;
+}
+
+
+
+/***** /*/
+
+.inputCantidad{
+    width: 45%;
+}
+
+.thCantidad{
+    width: 30%;
+}
+
+.tdCantidad{
+    padding-left: 20%;
+}
+
+.thNombre{
+    width: 80%;
+}
+
+.modalTittle{
+    font-size: 35px;
+    margin-left: 15%;
+
+}
+
+.totalCarrito{
+    font-size: 25px;
+}
+
