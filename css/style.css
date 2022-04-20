@@ -343,6 +343,27 @@ main {
     }
 }
 
+@media (max-width: 380px){
+    .newsletterNegrita {
+        font-size: 25px;
+    }
+
+    .newsletterP {
+        text-align: center;
+        margin-top: 1%;
+        font-size: 14px;
+    }
+
+    .newsletter {
+        height: 20vh;
+        padding: 2.5%;
+    }
+
+    .inputEmail {
+        margin-top: 3%;
+    }
+}
+
 /************************************************************* INSTAGRAM *******************************************************************/
 
 .insta {
@@ -392,6 +413,13 @@ main {
     .instaImg {
         height: 70px;
         width: 70px;
+    }
+}
+
+@media (max-width: 380px){
+    .instaImg {
+        height: 55px;
+        width: 55px;
     }
 }
 
