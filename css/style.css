@@ -260,35 +260,6 @@ main {
 
 /************************************************************* CARRITO DE COMPRAS *******************************************************************/
 
-.tituloCarrito {
-    font-size: 30px;
-    text-align: center;
-    margin-top: 3%;
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.menuDeCarrito {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 2%;
-}
-
-.productoDelCarrito {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 3%;
-}
-
-
-.inputCantidadCarrito {
-    width: 1.5%;
-    height: 22px;
-}
 
 .btnCarrito {
     z-index: 2;
@@ -318,6 +289,21 @@ main {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 0.25rem;
+}
+
+.modalTittle {
+    font-size: 35px;
+    margin-left: 15%;
+}
+.totalCarrito {
+    font-size: 25px;
+}
+
+@media (max-width: 600px) {
+    
+    .modalTittle {
+        font-size: 25px;
+    }
 }
 
 /************************************************************* NEWSLETTER *******************************************************************/
@@ -545,14 +531,4 @@ footer {
 
 .thNombre {
     width: 80%;
-}
-
-.modalTittle {
-    font-size: 35px;
-    margin-left: 15%;
-
-}
-
-.totalCarrito {
-    font-size: 25px;
 }
