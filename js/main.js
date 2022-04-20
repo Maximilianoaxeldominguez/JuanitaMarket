@@ -87,7 +87,7 @@ productosMasElegidos.forEach((producto) => {
     <div class="detalleProducto" >
       <h5 class="nombreProducto">${producto.nombre}</h5>
       <p class="precioProducto">$ ${producto.precio}</p>
-      <a href="#cart" class="btn btn-primary btnComprar addToCart" >Comprar</a>
+      <a href="#cart" class="btn btn-primary btnComprar addToCart" >Agregar al carrito</a>
     </div>
       `;
     contenedor.appendChild(card);
