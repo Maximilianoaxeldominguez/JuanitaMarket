@@ -35,18 +35,21 @@ main {
     justify-content: center;
 }
 
-@media(max-width: 600px){
+@media(max-width: 600px) {
     .textoPromo {
         font-size: 14px;
     }
-    .imagenJuanita{
+
+    .imagenJuanita {
         width: 200px;
         height: 200px;
     }
-    .foto1{
+
+    .foto1 {
         height: 15vh;
     }
-    .carousel{
+
+    .carousel {
         margin-top: 3%;
     }
 }
@@ -84,26 +87,27 @@ main {
     font-size: 22px;
 }
 
-.alert{
+.alert {
     z-index: 100;
-  }
+}
 
-  @media (max-width : 1225px){
+@media (max-width : 1225px) {
 
     .cajaFlex {
         height: 12vh;
     }
+
     .CajaNegrita {
         font-size: 18px;
     }
 
-    .icon-inline{
+    .icon-inline {
         width: 75px;
         height: 75px;
     }
-  }
+}
 
-  @media (max-width : 1005px){
+@media (max-width : 1005px) {
 
     .col-auto {
         margin-left: 2%;
@@ -117,15 +121,17 @@ main {
         font-size: 15px;
     }
 
-    .icon-inline{
+    .icon-inline {
         width: 65px;
         height: 65px;
     }
-    .XXXitem{
+
+    .XXXitem {
         font-size: 14px;
     }
-  }
-  @media (max-width : 630px){
+}
+
+@media (max-width : 630px) {
 
     .cajaFlex {
         height: 12vh;
@@ -135,21 +141,22 @@ main {
         font-size: 14px;
     }
 
-    .icon-inline{
+    .icon-inline {
         width: 50px;
         height: 50px;
     }
-    .XXXitem{
+
+    .XXXitem {
         font-size: 12px;
     }
-  }
+}
 
-  @media(max-width: 600px){
-      .cajaFlex{
-          display: none;
-      }
-  }
-  
+@media(max-width: 600px) {
+    .cajaFlex {
+        display: none;
+    }
+}
+
 /************************************************************* PRODUCTOS MAS ELEGIDOS *******************************************************************/
 .loMasElegido {
     text-align: center;
@@ -193,24 +200,25 @@ main {
     margin-bottom: 2%;
 }
 
-@media (max-width: 1550px){
+@media (max-width: 1550px) {
 
     .containerProductos img {
         height: 425px;
     }
-    .nombreProducto{
+
+    .nombreProducto {
         font-size: 16px;
     }
 }
 
-@media (max-width: 1150px){
+@media (max-width: 1150px) {
 
     .containerProductos img {
         height: 350px;
     }
 }
 
-@media (max-width: 950px){
+@media (max-width: 950px) {
 
     .containerProductos {
         width: 30%;
@@ -221,23 +229,24 @@ main {
     }
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
 
     .containerProductos img {
         height: 250px;
     }
-    .nombreProducto{
+
+    .nombreProducto {
         font-size: 14px;
     }
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
     .containerProductos {
         width: 45%;
     }
 }
 
-@media (max-width: 470px){
+@media (max-width: 470px) {
     .containerProductos {
         width: 80%;
     }
@@ -254,7 +263,7 @@ main {
     font-weight: bold;
 }
 
-.menuDeCarrito{
+.menuDeCarrito {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -263,7 +272,7 @@ main {
     margin-top: 2%;
 }
 
-.productoDelCarrito{
+.productoDelCarrito {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -271,7 +280,7 @@ main {
 }
 
 
-.inputCantidadCarrito{
+.inputCantidadCarrito {
     width: 1.5%;
     height: 22px;
 }
@@ -309,19 +318,22 @@ main {
     margin-left: 25%;
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
     .newsletterNegrita {
         font-size: 35px;
     }
+
     .newsletterP {
         text-align: center;
         margin-top: 1%;
         font-size: 17px;
     }
+
     .newsletter {
-        height: 23vh;
+        height: 25vh;
         padding: 2.5%;
     }
+
     .inputEmail {
         margin-top: 3%;
     }
@@ -356,12 +368,12 @@ main {
     margin-left: 48%;
 }
 
-.InstaBtnLink{
+.InstaBtnLink {
     text-decoration: none;
     color: white;
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
     .instaLink {
         font-size: 30px;
         color: black;
@@ -388,7 +400,7 @@ footer {
     margin-top: 5%;
 }
 
-.fooFlex{
+.fooFlex {
     display: flex;
     flex-direction: row;
     width: 80%;
@@ -397,7 +409,7 @@ footer {
     border-bottom: 2px black solid;
 }
 
-.menuFlex{
+.menuFlex {
     margin-top: 5%;
     margin-bottom: 5%;
     display: flex;
@@ -406,22 +418,22 @@ footer {
     margin-left: 10%;
 }
 
-.FooPagos{
+.FooPagos {
     margin-top: 3%;
     text-align: center;
     margin-right: 3%;
 }
 
-.FooPagos h6{
+.FooPagos h6 {
     font-size: 25px;
     margin-bottom: 2%;
 }
 
-.fooImg{
+.fooImg {
     margin-left: 1%;
 }
 
-.fooXD{
+.fooXD {
     background-color: black;
     color: white;
     font-size: 18px;
@@ -430,37 +442,51 @@ footer {
     text-align: center;
 }
 
-.fooXdP{
-padding-top: 0.5%;
+.fooXdP {
+    padding-top: 0.5%;
 }
 
 
+@media (max-width: 600px) {
+    .fooTitulo{
+        font-size: 15px;
+    }
+    .fooParrafo{
+        font-size: 12px;
+    }
+    footer {
+        height: 38vh;
+    }
+    .fooXD {
+        font-size: 18px;
+        height: 6vh;
+    }
+}
 
-/***** /*/
+/************************************************************************************************* /*/
 
-.inputCantidad{
+.inputCantidad {
     width: 45%;
 }
 
-.thCantidad{
+.thCantidad {
     width: 30%;
 }
 
-.tdCantidad{
+.tdCantidad {
     padding-left: 20%;
 }
 
-.thNombre{
+.thNombre {
     width: 80%;
 }
 
-.modalTittle{
+.modalTittle {
     font-size: 35px;
     margin-left: 15%;
 
 }
 
-.totalCarrito{
+.totalCarrito {
     font-size: 25px;
 }
-
