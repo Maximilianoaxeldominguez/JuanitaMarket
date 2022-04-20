@@ -244,6 +244,7 @@ main {
     .containerProductos {
         width: 45%;
     }
+
     .loMasElegido {
         text-align: center;
         margin-top: 6%;
@@ -287,6 +288,36 @@ main {
 .inputCantidadCarrito {
     width: 1.5%;
     height: 22px;
+}
+
+.btnCarrito {
+    z-index: 2;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    color: black;
+    opacity: 65%;
+    font-weight: bold;
+}
+
+.counterCarrito{
+    z-index: 3;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+.counterCarrito{
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
 }
 
 /************************************************************* NEWSLETTER *******************************************************************/
@@ -343,7 +374,7 @@ main {
     }
 }
 
-@media (max-width: 380px){
+@media (max-width: 380px) {
     .newsletterNegrita {
         font-size: 25px;
     }
@@ -416,7 +447,7 @@ main {
     }
 }
 
-@media (max-width: 380px){
+@media (max-width: 380px) {
     .instaImg {
         height: 55px;
         width: 55px;
@@ -480,15 +511,18 @@ footer {
 
 
 @media (max-width: 600px) {
-    .fooTitulo{
+    .fooTitulo {
         font-size: 15px;
     }
-    .fooParrafo{
+
+    .fooParrafo {
         font-size: 12px;
     }
+
     footer {
         height: 38vh;
     }
+
     .fooXD {
         font-size: 18px;
         height: 8vh;
