@@ -5,7 +5,6 @@
 
 body {
     height: 100vh;
-    background-color: #fafafa;
 }
 
 header {
@@ -162,7 +161,6 @@ main {
 .loMasElegido {
     text-align: center;
     margin-top: 2%;
-    background-color:#fafafa;
 }
 
 .containerFlex {
@@ -171,7 +169,6 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    background-color: #fafafa;
 }
 
 .containerProductos {
@@ -401,7 +398,6 @@ main {
     margin-top: 5%;
     text-align: center;
     font-family: monospace;
-    background-color: #fafafa;
 }
 
 .instaImg {
