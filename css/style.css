@@ -5,6 +5,7 @@
 
 body {
     height: 100vh;
+    background-color: #fafafa;
 }
 
 header {
@@ -169,6 +170,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    background-color: #fafafa;
 }
 
 .containerProductos {
@@ -363,6 +365,7 @@ main {
     .newsletter {
         height: 25vh;
         padding: 2.5%;
+        margin-top: 10%;
     }
 
     .inputEmail {
@@ -397,6 +400,7 @@ main {
     margin-top: 5%;
     text-align: center;
     font-family: monospace;
+    background-color: #fafafa;
 }
 
 .instaImg {
@@ -426,6 +430,15 @@ main {
 }
 
 @media (max-width: 600px) {
+    .insta {
+        margin-top: 10%;
+        margin-bottom: 2%;
+    }
+
+    .InstaBtn {
+        margin-bottom: 5%;
+    }
+
     .instaLink {
         font-size: 30px;
         color: black;
@@ -522,6 +535,13 @@ footer {
     .fooXD {
         font-size: 18px;
         height: 8vh;
+    }
+
+    .FooPagos h6 {
+        margin-bottom: 5%;
+    }
+    .fooImagenesTarjetas{
+        margin-bottom: 5%;
     }
 }
 
