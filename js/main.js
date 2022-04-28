@@ -93,7 +93,7 @@ productosMasElegidos.forEach((producto) => {
     contenedor.appendChild(card);
 });
 
-//* CARRITOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO //*
+//* CARRITOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO //** 
 
 
 const Clickbutton = document.querySelectorAll('.btnAgregar')
