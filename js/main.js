@@ -248,20 +248,27 @@ function finalizarCompra() {
 
     contenedorCarrito.innerHTML = ``;
 
-    const shoppingCartTotal = document.querySelector('.shoppingCartTotal')
-    shoppingCartTotal.innerHTML = `Total $ 0`
+    const totalCarrito = document.querySelector('.totalCarrito')
+    totalCarrito.innerHTML = `Total $ 0`
+
+    if (carrito.length == 0) {
+        Swal.fire(
+            'Debe agregar productos al carrito',
+            'solucione el problema, y vuelva a intentarlo',
+            'error'
+        )
+    } else {
+        Swal.fire(
+        'Gracias por tu compra',
+        'a la brevedad nos estaremos comunicando',
+        'success'
+    )}
 
     carrito = [];
     counter.textContent = carrito.length;
 
     localStorage.removeItem("carrito")
 
-
-    Swal.fire(
-        'Gracias por tu compra',
-        'a la brevedad nos estaremos comunicando',
-        'success'
-    )
 }
 
 
