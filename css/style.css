@@ -314,6 +314,8 @@ main {
     .inputCantidad{
     margin-left: 25%;
     }
+    .buttonDelete{
+        margin-right: 10%;}
 }
 
 /************************************************************* NEWSLETTER *******************************************************************/
@@ -564,3 +566,23 @@ footer {
  .hide, .remove{
     display: none;
   }
+
+/* -------------------------------------------------------------------------- */
+/*                                API DEL CLIMA                               */
+/* -------------------------------------------------------------------------- */
+
+#contenedorApiClima{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+#caja1Clima, #caja2Clima, #caja3Clima {
+    text-align: center;
+    background-color: rgb(209, 209, 209);
+    width: 25%;
+    height: 20vh;
+    padding-top: 2%;
+}

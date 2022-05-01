@@ -1,4 +1,6 @@
-//***************************************** ARRAY PRODUCTOS MAS ELEGIDOS******************************************* *//
+/* -------------------------------------------------------------------------- */
+/*                             ARRAY DE PRODUCTOS                             */
+/* -------------------------------------------------------------------------- */
 
 let productosMasElegidos = [{
         id: 1,
@@ -93,20 +95,26 @@ productosMasElegidos.forEach((producto) => {
     contenedor.appendChild(card);
 });
 
-//* CARRITOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO //** 
+/* -------------------------------------------------------------------------- */
+/*                                   CARRITO                                  */
+/* -------------------------------------------------------------------------- */
 
 
-const Clickbutton = document.querySelectorAll('.btnAgregar')
+const btnAgregar = document.querySelectorAll('.btnAgregar')
 const contenedorCarrito = document.querySelector('.ContenedorCarrito')
 let carrito = []
 let counter = document.querySelector("#counter")
+let btnFinalizarCompra = document.querySelector(".btnFinalizarCompra")
 
-Clickbutton.forEach(btn => {
-    btn.addEventListener('click', addToCarritoItem)
+
+btnAgregar.forEach(btn => {
+    btn.addEventListener('click', agregarAlCarrito)
 })
 
+btnFinalizarCompra.addEventListener("click", finalizarCompra);
 
-function addToCarritoItem(e) {
+
+function agregarAlCarrito(e) {
     const button = e.target
     const item = button.closest('.containerProductos')
     const itemTitle = item.querySelector('.nombreProducto').textContent;
@@ -120,11 +128,11 @@ function addToCarritoItem(e) {
         cantidad: 1
     }
 
-    addItemCarrito(newItem)
+    agregarItemAlCarrito(newItem)
 }
 
 
-function addItemCarrito(newItem) {
+function agregarItemAlCarrito(newItem) {
 
     const alert = document.querySelector('.alert')
 
@@ -168,57 +176,167 @@ function renderCarrito() {
         tr.innerHTML = Content;
         contenedorCarrito.append(tr)
 
-         tr.querySelector(".buttonDelete").addEventListener('click', removeItemCarrito) 
+        tr.querySelector(".buttonDelete").addEventListener('click', eliminarItemDelCarrito)
+        tr.querySelector(".inputCantidad").addEventListener('change', sumaCantidad)
     })
-       CarritoTotal() 
+    CarritoTotal()
 }
 
- function CarritoTotal(){
+function CarritoTotal() {
 
-  let Total = 0;
-  const shoppingCartTotal = document.querySelector('.shoppingCartTotal')
-  carrito.forEach((item) => {
-    const precio = Number(item.precio.replace("$", ''))
-    Total = Total + precio*item.cantidad
-  })
+    let Total = 0;
+    const totalCarrito = document.querySelector('.totalCarrito')
+    carrito.forEach((item) => {
+        const precio = Number(item.precio.replace("$", ''))
+        Total = Total + precio * item.cantidad
+    })
 
-  shoppingCartTotal.innerHTML = `Total $${Total}`
-   addLocalStorage()
-   counter.textContent = carrito.length;
+    totalCarrito.innerHTML = `Total $${Total}`
+    addLocalStorage()
+    counter.textContent = carrito.length;
 }
 
-function removeItemCarrito(e){
-  const buttonDelete = e.target
-  const tr = buttonDelete.closest(".ItemCarrito")
-  const title = tr.querySelector('.title').textContent;
-  for(let i=0; i<carrito.length ; i++){
+function eliminarItemDelCarrito(e) {
+    const buttonDelete = e.target
+    const tr = buttonDelete.closest(".ItemCarrito")
+    const title = tr.querySelector('.title').textContent;
+    for (let i = 0; i < carrito.length; i++) {
 
-    if(carrito[i].title.trim() === title.trim()){
-      carrito.splice(i, 1)
+        if (carrito[i].title.trim() === title.trim()) {
+            carrito.splice(i, 1)
+        }
     }
-  }
 
-  const alert = document.querySelector('.remove')
+    const alert = document.querySelector('.remove')
 
-  setTimeout( function(){
-    alert.classList.add('remove')
-  }, 1000)
+    setTimeout(function () {
+        alert.classList.add('remove')
+    }, 1000)
     alert.classList.remove('remove')
 
-  tr.remove()
-  CarritoTotal()
-} 
-
-
- function addLocalStorage(){
-  localStorage.setItem('carrito', JSON.stringify(carrito))
+    tr.remove()
+    CarritoTotal()
 }
 
-window.onload = function(){
-  const storage = JSON.parse(localStorage.getItem('carrito'));
-  if(storage){
-    carrito = storage;
-    renderCarrito()
-  }
-}  
- 
+function sumaCantidad(e) {
+    const sumaInput = e.target
+    const tr = sumaInput.closest(".ItemCarrito")
+    const title = tr.querySelector('.title').textContent;
+    carrito.forEach(item => {
+        if (item.title.trim() === title) {
+            sumaInput.value < 1 ? (sumaInput.value = 1) : sumaInput.value;
+            item.cantidad = sumaInput.value;
+            CarritoTotal()
+        }
+    })
+}
+
+
+function addLocalStorage() {
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+}
+
+window.onload = function () {
+    const storage = JSON.parse(localStorage.getItem('carrito'));
+    if (storage) {
+        carrito = storage;
+        renderCarrito()
+    }
+}
+
+function finalizarCompra() {
+
+    contenedorCarrito.innerHTML = ``;
+
+    const shoppingCartTotal = document.querySelector('.shoppingCartTotal')
+    shoppingCartTotal.innerHTML = `Total $ 0`
+
+    carrito = [];
+    counter.textContent = carrito.length;
+
+    localStorage.removeItem("carrito")
+
+
+    Swal.fire(
+        'Gracias por tu compra',
+        'a la brevedad nos estaremos comunicando',
+        'success'
+    )
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                               API DEL TIEMPO                               */
+/* -------------------------------------------------------------------------- */
+
+let lon
+let lat
+
+let temperaturaValor = document.getElementById("temperaturaValor");
+let temperaturaDescripcion = document.getElementById("temperaturaDescripcion");
+
+let ubicacion = document.getElementById("ubicacion");
+let iconoAnimadoClima = document.getElementById("iconoAnimadoClima");
+
+let vientoVelocidad = document.getElementById("vientoVelocidad");
+
+
+
+window.addEventListener("load", () => {
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(posicion => {
+
+            lon = posicion.coords.longitude
+            lat = posicion.coords.latitude
+
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=8b1228efc09846e0298d4086a1d0187c&lang=es&units=metric`
+
+            fetch(url)
+                .then(response => {
+                    return response.json()
+                })
+                .then(data => {
+                    let temp = Math.round(data.main.temp)
+                    temperaturaValor.textContent = `${temp} ºC`
+
+                    let desc = data.weather[0].description;
+                    temperaturaDescripcion.textContent = desc.toUpperCase()
+
+                    ubicacion.textContent = data.name;
+
+                    vientoVelocidad.textContent = `${data.wind.speed} m/s`
+
+                    switch (data.weather[0].main) {
+                        case "Clear":
+                            iconoAnimadoClima.src = "http://openweathermap.org/img/wn/01d@2x.png"
+                            break
+                        case "Clouds":
+                            iconoAnimadoClima.src = "http://openweathermap.org/img/wn/03d@2x.png"
+                            break
+                        case "Thunderstorm":
+                            iconoAnimadoClima.src = "http://openweathermap.org/img/wn/11d@2x.png"
+                            break
+                        case "Drizzle":
+                            iconoAnimadoClima.src = "http://openweathermap.org/img/wn/09d@2x.png"
+                            break
+                        case "Rain":
+                            iconoAnimadoClima.src = "http://openweathermap.org/img/wn/10d@2x.png"
+                            break
+                        case "Snow":
+                            iconoAnimadoClima.src = "http://openweathermap.org/img/wn/13d@2x.png"
+                            break
+                        case "atmosphere":
+                            iconoAnimadoClima.src = "http://openweathermap.org/img/wn/50d@2x.png"
+                            break
+                        default:
+                            iconoAnimadoClima.src = "http://openweathermap.org/img/wn/01d@2x.png"
+                    }
+
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        })
+    }
+})
